@@ -15,3 +15,22 @@ lettersArray.forEach((letter) => {
     lettersContainer.appendChild(span);
 });
 // By @beldi5 : End implimentation of generating the letter 
+
+// @beldi5 : Start implimentation of random word 
+const words = {
+    programming: ['python', 'java', 'kotlin', 'javascript'],
+    movies: ['avengers', 'interstellar', 'inception', 'matrix'],
+    countries: ['egypt', 'syria', 'spain', 'france', 'germany'],
+    football: ['messi', 'ronaldo', 'neymar', 'zidane', 'xavi', 'iniesta'],
+    Singers: ['eminem', 'shakira', 'madonna', 'adele', "rihanna"],
+};
+
+let allKeys = Object.keys(words); // Get all keys from words object (Categories)
+let randomIndexCategory = Math.floor(Math.random() * allKeys.length); // Get random index depending on the length of allKeys
+let category = allKeys[randomIndexCategory]; // Get the category depending on the random index
+document.querySelector('.game-info .category span').textContent = category; // Display the category in the game info
+let randomIndexWord = Math.floor(Math.random() * words[category].length); // Get random index depending on the length of the words in the category
+let word = words[category][randomIndexWord]; // Get the word depending on the random index
+console.log(word);
+console.log(category);
+// @beldi5 : End implimentation of random word
