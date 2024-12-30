@@ -41,11 +41,42 @@ let lettersGuessContainer = document.querySelector('.letters-guess');
 let letterAndSpace = Array.from(word);
 letterAndSpace.forEach((letter) => {
     let emptySpan = document.createElement('span');
-    /*  point = document.createTextNode('.');
-      emptySpan.appendChild(point);*/
     if (letter === ' ') {
         // handling word with space
         emptySpan.className = 'with-space';
     }
     lettersGuessContainer.appendChild(emptySpan);
+});
+let guessSpans = document.querySelectorAll('.letters-guess span');
+let theDraw = document.querySelector('.hangman-draw');
+let wrongAttempts = 0;
+document.addEventListener('click', (e) => {
+    let thestatus = false;
+    if (e.target.className === 'letter-box') {
+        //  e.target.classList.add('clicked');
+        // Get the clicked letter 
+        let clickedLetter = e.target.textContent.toLowerCase();
+        letterAndSpace.forEach((wordLetter, wordindex) => {
+            // verification of the click letter equal to one of the chosen word letter
+            if (wordLetter === clickedLetter) {
+                thestatus = true; // correct chose
+                guessSpans.forEach((span, spanIndex) => {
+                    if (spanIndex === wordindex) {
+                        span.textContent = clickedLetter;
+                    }
+                });
+            }
+        })
+        //handling if the letter clicked is not in the word
+        if (!thestatus) {
+            wrongAttempts++; // increment the wrong attempts
+            theDraw.classList.add(`wrong-${wrongAttempts}`);
+            document.getElementById('fail').play();
+            if (wrongAttempts === 8) {
+                alert('Game Over, The Word is ' + word);
+            }
+        } else {
+            document.getElementById('success').play();
+        }
+    }
 });
