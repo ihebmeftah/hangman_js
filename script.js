@@ -21,7 +21,7 @@ const words = {
     programming: ['python', 'java', 'kotlin', 'javascript'],
     movies: ['avengers', 'interstellar', 'inception', 'matrix'],
     countries: ['egypt', 'syria', 'spain', 'france', 'germany'],
-    football: ['messi', 'ronaldo', 'neymar', 'zidane', 'xavi', 'iniesta'],
+    football: ['lionel messi', 'cristiano ronaldo', 'mohamed salah', 'neymar', 'zlatan ibrahimovic'],
     Singers: ['eminem', 'shakira', 'madonna', 'adele', "rihanna"],
 };
 
@@ -34,3 +34,18 @@ let word = words[category][randomIndexWord]; // Get the word depending on the ra
 console.log(word);
 console.log(category);
 // @beldi5 : End implimentation of random word
+
+// @ihebmeftah
+// this logic for display case of the word in the game
+let lettersGuessContainer = document.querySelector('.letters-guess');
+let letterAndSpace = Array.from(word);
+letterAndSpace.forEach((letter) => {
+    let emptySpan = document.createElement('span');
+    /*  point = document.createTextNode('.');
+      emptySpan.appendChild(point);*/
+    if (letter === ' ') {
+        // handling word with space
+        emptySpan.className = 'with-space';
+    }
+    lettersGuessContainer.appendChild(emptySpan);
+});

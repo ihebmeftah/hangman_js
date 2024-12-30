@@ -172,3 +172,43 @@ hr {
   font-weight: bold;
   cursor: pointer;
 }
+
+.letters-guess {
+  margin: 10px auto;
+  background-color: #f8f8f8;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 104px;
+}
+
+.letters-guess span {
+  width: 60px;
+  height: 60px;
+  border-bottom: 3px solid #333;
+  font-size: 24px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #fdfdfd;
+  transition: 0.3s;
+}
+
+.letters-guess span.with-space {
+  background: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.letters-guess span.with-space::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background-color: #333;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
