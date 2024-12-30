@@ -7,5 +7,6 @@ It was built as a university project by the following contributors:
 - [Iheb Meftah](https://github.com/ihebmeftah)
 
 # source
-[Source helped us](https://www.youtube.com/watch?v=ZFb_eaYtWwY) on YouTube.
 
+[Source helped us](https://www.youtube.com/watch?v=ZFb_eaYtWwY) on YouTube.
+![screenshot](https://github.com/beldi5/hangman-game/blob/master/screenshot.png?raw=true)
